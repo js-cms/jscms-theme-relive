@@ -1,0 +1,19 @@
+{
+  "name": "jscms-theme-xblog",
+  "version": "1.0.0",
+  "description": "Theme of jscms",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lisniuse/jscms-theme-xblog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lisniuse/jscms-theme-xblog/issues"
+  },
+  "homepage": "https://github.com/lisniuse/jscms-theme-xblog#readme"
+}
