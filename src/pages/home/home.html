@@ -4,12 +4,16 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
-    <link rel="shortcut icon" href="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/favicon.png" />
-    <title>Relive主题演示 - 又一个Jscms站点</title>
+    <link rel="shortcut icon"
+        href="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/favicon.png" />
+    <title>Relive主题演示 - 又一个WordPress站点</title>
+
     <link rel='stylesheet' id='wp-block-library-css'
         href='http://relive.xintheme.cn/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
     <link rel='stylesheet' id='xintheme_vendors-css'
         href='http://relive.xintheme.cn/wp-content/themes/Relive/static/css/vendors.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='thenextmag-style-css'
+        href='http://relive.xintheme.cn/wp-content/themes/Relive/static/css/style.css' type='text/css' media='all' />
     <link rel='stylesheet' id='iconfont-css'
         href='http://relive.xintheme.cn/wp-content/themes/Relive/static/font/iconfont.css' type='text/css'
         media='all' />
@@ -19,7 +23,7 @@
         type='text/css' media='all' />
     <link rel='stylesheet' id='user_css-css'
         href='http://relive.xintheme.cn/wp-content/themes/Relive/static/css/user.css' type='text/css' media='all' />
-    <script type='text/javascript' src='http://relive.xintheme.cn/wp-includes/js/jquery/jquery.js'></script>
+    <script type='text/javascript' src='./libs/jquery.min.js'></script>
     <script type='text/javascript' src='http://relive.xintheme.cn/wp-includes/js/jquery/jquery-migrate.min.js'></script>
     <link rel='https://api.w.org/' href='http://relive.xintheme.cn/wp-json/' />
     <style>
@@ -71,7 +75,7 @@
     <meta property="wb:webmaster" content="404589b91a54ec1b" />
 </head>
 
-<body class="home blog logged-in">
+<body class="home blog">
     <div class="site-wrapper">
         <style>
             .site-header .navigation-bar,
@@ -168,9 +172,8 @@
                                 </li>
                                 <li class="menu-item"><a href="http://www.xintheme.com/theme/14046.html"><i
                                             class="iconfont icon-tishi5"></i> 购买主题</a></li>
-                                <li class="menu-item"><a
-                                        href="http://relive.xintheme.cn/author/116?tab=post&action=new"><i
-                                            class="iconfont icon-write"></i> 投稿</a></li>
+                                <li class="menu-item"><a href="#login-modal" data-toggle="modal"
+                                        data-target="#login-modal"><i class="iconfont icon-write"></i> 投稿</a></li>
                             </ul>
                         </div>
                     </div>
@@ -198,52 +201,9 @@
                         </ul>
                     </div>
                     <div class="navigation-bar__section lwa lwa-template-modal">
-                        <div class="bk-lwa navigation-bar-btn">
-                            <table>
-                                <tr>
-                                    <td class="avatar lwa-avatar bk-avatar">
-                                        <a href="#"><img
-                                                src="https://q.qlogo.cn/qqapp/101533230/71F047926FD5688D1E9043A5B7A1A854/100"
-                                                class="avatar" width="27" height="27" /></a>
-                                        <div class="bk-username visible-xs visible-sm">
-                                            <a href="http://relive.xintheme.cn/author/116">麦迪文</a>
-                                        </div>
-                                        <div class="bk-canvas-logout visible-xs visible-sm">
-                                            <i class="iconfont icon-084tuichu"></i>
-                                            <a class="wp-logout"
-                                                href="http://relive.xintheme.cn/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Frelive.xintheme.cn&amp;_wpnonce=db8abda167">退出登录</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="bk-account-info hidden-xs hidden-sm">
-                                <div class="bk-lwa-profile">
-                                    <div class="bk-avatar">
-                                        <img src="https://q.qlogo.cn/qqapp/101533230/71F047926FD5688D1E9043A5B7A1A854/100"
-                                            class="avatar" width="110" height="110" /> </div>
-                                    <div class="bk-user-data clearfix">
-                                        <div class="bk-username">
-                                            <i class="iconfont icon-denglu"></i>
-                                            <a href="http://relive.xintheme.cn/author/116">我的主页</a>
-                                        </div>
-                                        <div class="bk-block">
-                                            <i class="iconfont icon-bianji"></i>
-                                            <a href="http://relive.xintheme.cn/author/116?tab=profile">个人资料</a>
-                                        </div>
-                                        <div class="bk-block">
-                                            <i class="iconfont icon-wenzhang" style="font-weight: 700;"></i>
-                                            <a href="http://relive.xintheme.cn/author/116?tab=post&action=new">我要投稿</a>
-                                        </div>
-
-                                        <div class="bk-block">
-                                            <i class="iconfont icon-084tuichu"></i>
-                                            <a class="wp-logout"
-                                                href="http://relive.xintheme.cn/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Frelive.xintheme.cn&amp;_wpnonce=db8abda167">退出登录</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <button type="submit" class="navigation-bar-btn js-search-dropdown-toggle">
+                        <a href="#login-modal" class="navigation-bar__login-btn navigation-bar-btn" data-toggle="modal"
+                            data-target="#login-modal"><i class="iconfont icon-denglu"></i></a>
+                        <button type="submit" class="navigation-bar-btn js-search-dropdown-toggle">
                             <i class="iconfont icon-sousuo"></i>
                         </button>
                     </div>
@@ -297,8 +257,8 @@
                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                     <time class="time published" title="2018-10-06"><i
                                             class="iconfont icon-time"></i>2018-10-06</time>
-                                    <span><a title="2,491 次浏览" href="http://relive.xintheme.cn/people/566.html"><i
-                                                class="iconfont icon-browse"></i>2,491</a></span>
+                                    <span><a title="2,511 次浏览" href="http://relive.xintheme.cn/people/566.html"><i
+                                                class="iconfont icon-browse"></i>2,511</a></span>
                                     <span><a title="6 条评论" href="http://relive.xintheme.cn/people/566.html"><i
                                                 class="iconfont icon-interactive"></i>6</a></span>
                                 </div>
@@ -339,9 +299,9 @@
                                                             class="iconfont icon-addressbook"></i>新主题</a></span>
                                                 <time class="time published" title="2018-10-06"><i
                                                         class="iconfont icon-time"></i>2018-10-06</time>
-                                                <span><a title="501 次浏览"
+                                                <span><a title="506 次浏览"
                                                         href="http://relive.xintheme.cn/people/557.html"><i
-                                                            class="iconfont icon-browse"></i>501</a></span>
+                                                            class="iconfont icon-browse"></i>506</a></span>
                                             </div>
                                         </div>
                                     </article>
@@ -370,9 +330,9 @@
                                                             class="iconfont icon-addressbook"></i>新主题</a></span>
                                                 <time class="time published" title="2018-10-06"><i
                                                         class="iconfont icon-time"></i>2018-10-06</time>
-                                                <span><a title="517 次浏览"
+                                                <span><a title="518 次浏览"
                                                         href="http://relive.xintheme.cn/people/545.html"><i
-                                                            class="iconfont icon-browse"></i>517</a></span>
+                                                            class="iconfont icon-browse"></i>518</a></span>
                                             </div>
                                         </div>
                                     </article>
@@ -462,8 +422,8 @@
                                                         class="iconfont icon-addressbook"></i>新主题</a></span>
                                             <time class="time published" title="2018-10-06"><i
                                                     class="iconfont icon-time"></i>2018-10-06</time>
-                                            <span><a title="501 次浏览" href="http://relive.xintheme.cn/people/557.html"><i
-                                                        class="iconfont icon-browse"></i>501</a></span>
+                                            <span><a title="506 次浏览" href="http://relive.xintheme.cn/people/557.html"><i
+                                                        class="iconfont icon-browse"></i>506</a></span>
                                         </div>
                                     </div>
                                 </article>
@@ -487,8 +447,8 @@
                                                         class="iconfont icon-addressbook"></i>新主题</a></span>
                                             <time class="time published" title="2018-10-06"><i
                                                     class="iconfont icon-time"></i>2018-10-06</time>
-                                            <span><a title="517 次浏览" href="http://relive.xintheme.cn/people/545.html"><i
-                                                        class="iconfont icon-browse"></i>517</a></span>
+                                            <span><a title="518 次浏览" href="http://relive.xintheme.cn/people/545.html"><i
+                                                        class="iconfont icon-browse"></i>518</a></span>
                                         </div>
                                     </div>
                                 </article>
@@ -693,9 +653,9 @@
                                                                 <span><a title="5 条评论"
                                                                         href="http://relive.xintheme.cn/life/742.html"><i
                                                                             class="iconfont icon-interactive"></i>5</a></span>
-                                                                <span><a title="1,439 次浏览"
+                                                                <span><a title="1,445 次浏览"
                                                                         href="http://relive.xintheme.cn/life/742.html"><i
-                                                                            class="iconfont icon-browse"></i>1,439</a></span>
+                                                                            class="iconfont icon-browse"></i>1,445</a></span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -730,9 +690,9 @@
                                                                         class="iconfont icon-addressbook"></i>新主题</a></span>
                                                             <time class="time published" title="2018-10-06"><i
                                                                     class="iconfont icon-time"></i>2018-10-06</time>
-                                                            <span><a title="955 次浏览"
+                                                            <span><a title="958 次浏览"
                                                                     href="http://relive.xintheme.cn/life/648.html"><i
-                                                                        class="iconfont icon-browse"></i>955</a></span>
+                                                                        class="iconfont icon-browse"></i>958</a></span>
                                                         </div>
                                                     </div>
                                                     <a class="post__cat post__cat--bg cat-theme-bg overlay-item--top-left"
@@ -762,9 +722,9 @@
                                                                         class="iconfont icon-addressbook"></i>新主题</a></span>
                                                             <time class="time published" title="2018-10-06"><i
                                                                     class="iconfont icon-time"></i>2018-10-06</time>
-                                                            <span><a title="687 次浏览"
+                                                            <span><a title="690 次浏览"
                                                                     href="http://relive.xintheme.cn/life/644.html"><i
-                                                                        class="iconfont icon-browse"></i>687</a></span>
+                                                                        class="iconfont icon-browse"></i>690</a></span>
                                                         </div>
                                                     </div>
                                                     <a class="post__cat post__cat--bg cat-theme-bg overlay-item--top-left"
@@ -794,9 +754,9 @@
                                                                         class="iconfont icon-addressbook"></i>新主题</a></span>
                                                             <time class="time published" title="2018-10-06"><i
                                                                     class="iconfont icon-time"></i>2018-10-06</time>
-                                                            <span><a title="570 次浏览"
+                                                            <span><a title="576 次浏览"
                                                                     href="http://relive.xintheme.cn/life/633.html"><i
-                                                                        class="iconfont icon-browse"></i>570</a></span>
+                                                                        class="iconfont icon-browse"></i>576</a></span>
                                                         </div>
                                                     </div>
                                                     <a class="post__cat post__cat--bg cat-theme-bg overlay-item--top-left"
@@ -849,18 +809,16 @@
                                                             <div class="post__meta-right">
                                                                 <time class="time published" title="2019-01-12"><i
                                                                         class="iconfont icon-time"></i>2019-01-12</time><span><a
-                                                                        title="185 次浏览"
+                                                                        title="187 次浏览"
                                                                         href="http://relive.xintheme.cn/review/943.html"><i
-                                                                            class="iconfont icon-browse"></i>185</a></span><span
+                                                                            class="iconfont icon-browse"></i>187</a></span><span
                                                                     class="mobile-none"><a title="0 条评论"
                                                                         href="http://relive.xintheme.cn/review/943.html"><i
                                                                             class="iconfont icon-interactive"></i>0</a></span>
-
-                                                                <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                                    style="display: inline-block;margin-left: 3px;"
-                                                                    pid="943" uid="116" title="点击收藏"> <i
-                                                                        class="iconfont icon-collection"></i><span>0</span>&nbsp;
-                                                                </div>
+                                                                <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                                    href="#login-modal" data-toggle="modal"
+                                                                    data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                                        class="iconfont icon-collection"></i><span>0</span></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -919,18 +877,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2019-01-11"><i
                                                             class="iconfont icon-time"></i>2019-01-11</time><span><a
-                                                            title="719 次浏览"
+                                                            title="729 次浏览"
                                                             href="http://relive.xintheme.cn/appso/966.html"><i
-                                                                class="iconfont icon-browse"></i>719</a></span><span
+                                                                class="iconfont icon-browse"></i>729</a></span><span
                                                         class="mobile-none"><a title="3 条评论"
                                                             href="http://relive.xintheme.cn/appso/966.html"><i
                                                                 class="iconfont icon-interactive"></i>3</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="966"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>1</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>2</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -963,18 +919,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-28"><i
                                                             class="iconfont icon-time"></i>2018-10-28</time><span><a
-                                                            title="1,439 次浏览"
+                                                            title="1,445 次浏览"
                                                             href="http://relive.xintheme.cn/life/742.html"><i
-                                                                class="iconfont icon-browse"></i>1,439</a></span><span
+                                                                class="iconfont icon-browse"></i>1,445</a></span><span
                                                         class="mobile-none"><a title="5 条评论"
                                                             href="http://relive.xintheme.cn/life/742.html"><i
                                                                 class="iconfont icon-interactive"></i>5</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="742"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>3</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>3</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -984,7 +938,7 @@
                                             <div class="post__thumb min-height-160">
                                                 <a href="http://relive.xintheme.cn/appso/776.html"
                                                     alt="自1.3版本起，新增多种文章短代码">
-                                                    <img src="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/2018121910500992.jpg?x-oss-process=image/resize,m_fill,w_400,h_200"
+                                                    <img src="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/2018120311002453.jpeg?x-oss-process=image/resize,m_fill,w_400,h_200"
                                                         alt="自1.3版本起，新增多种文章短代码" width="400" height="200">
                                                 </a>
                                             </div>
@@ -1008,18 +962,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-20"><i
                                                             class="iconfont icon-time"></i>2018-10-20</time><span><a
-                                                            title="1,470 次浏览"
+                                                            title="1,475 次浏览"
                                                             href="http://relive.xintheme.cn/appso/776.html"><i
-                                                                class="iconfont icon-browse"></i>1,470</a></span><span
+                                                                class="iconfont icon-browse"></i>1,475</a></span><span
                                                         class="mobile-none"><a title="2 条评论"
                                                             href="http://relive.xintheme.cn/appso/776.html"><i
                                                                 class="iconfont icon-interactive"></i>2</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="776"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>7</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>7</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1052,18 +1004,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-06"><i
                                                             class="iconfont icon-time"></i>2018-10-06</time><span><a
-                                                            title="955 次浏览"
+                                                            title="958 次浏览"
                                                             href="http://relive.xintheme.cn/life/648.html"><i
-                                                                class="iconfont icon-browse"></i>955</a></span><span
+                                                                class="iconfont icon-browse"></i>958</a></span><span
                                                         class="mobile-none"><a title="0 条评论"
                                                             href="http://relive.xintheme.cn/life/648.html"><i
                                                                 class="iconfont icon-interactive"></i>0</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="648"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>5</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>5</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1096,18 +1046,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-06"><i
                                                             class="iconfont icon-time"></i>2018-10-06</time><span><a
-                                                            title="687 次浏览"
+                                                            title="690 次浏览"
                                                             href="http://relive.xintheme.cn/life/644.html"><i
-                                                                class="iconfont icon-browse"></i>687</a></span><span
+                                                                class="iconfont icon-browse"></i>690</a></span><span
                                                         class="mobile-none"><a title="0 条评论"
                                                             href="http://relive.xintheme.cn/life/644.html"><i
                                                                 class="iconfont icon-interactive"></i>0</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="644"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>4</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>4</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1140,18 +1088,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-06"><i
                                                             class="iconfont icon-time"></i>2018-10-06</time><span><a
-                                                            title="570 次浏览"
+                                                            title="576 次浏览"
                                                             href="http://relive.xintheme.cn/life/633.html"><i
-                                                                class="iconfont icon-browse"></i>570</a></span><span
+                                                                class="iconfont icon-browse"></i>576</a></span><span
                                                         class="mobile-none"><a title="0 条评论"
                                                             href="http://relive.xintheme.cn/life/633.html"><i
                                                                 class="iconfont icon-interactive"></i>0</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="633"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>4</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>4</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1188,12 +1134,10 @@
                                                         class="mobile-none"><a title="0 条评论"
                                                             href="http://relive.xintheme.cn/life/624.html"><i
                                                                 class="iconfont icon-interactive"></i>0</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="624"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>3</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>3</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1230,18 +1174,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-06"><i
                                                             class="iconfont icon-time"></i>2018-10-06</time><span><a
-                                                            title="416 次浏览"
+                                                            title="418 次浏览"
                                                             href="http://relive.xintheme.cn/life/610.html"><i
-                                                                class="iconfont icon-browse"></i>416</a></span><span
+                                                                class="iconfont icon-browse"></i>418</a></span><span
                                                         class="mobile-none"><a title="0 条评论"
                                                             href="http://relive.xintheme.cn/life/610.html"><i
                                                                 class="iconfont icon-interactive"></i>0</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="610"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>3</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>3</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1278,18 +1220,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-06"><i
                                                             class="iconfont icon-time"></i>2018-10-06</time><span><a
-                                                            title="2,784 次浏览"
+                                                            title="2,800 次浏览"
                                                             href="http://relive.xintheme.cn/game-special/594.html"><i
-                                                                class="iconfont icon-browse"></i>2,784</a></span><span
+                                                                class="iconfont icon-browse"></i>2,800</a></span><span
                                                         class="mobile-none"><a title="1 条评论"
                                                             href="http://relive.xintheme.cn/game-special/594.html"><i
                                                                 class="iconfont icon-interactive"></i>1</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="594"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>4</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>4</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1322,18 +1262,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-06"><i
                                                             class="iconfont icon-time"></i>2018-10-06</time><span><a
-                                                            title="535 次浏览"
+                                                            title="540 次浏览"
                                                             href="http://relive.xintheme.cn/game-special/589.html"><i
-                                                                class="iconfont icon-browse"></i>535</a></span><span
+                                                                class="iconfont icon-browse"></i>540</a></span><span
                                                         class="mobile-none"><a title="0 条评论"
                                                             href="http://relive.xintheme.cn/game-special/589.html"><i
                                                                 class="iconfont icon-interactive"></i>0</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="589"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>2</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>2</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1366,18 +1304,16 @@
                                                                 class="iconfont icon-addressbook"></i>新主题</a></span>
                                                     <time class="time published" title="2018-10-06"><i
                                                             class="iconfont icon-time"></i>2018-10-06</time><span><a
-                                                            title="613 次浏览"
+                                                            title="615 次浏览"
                                                             href="http://relive.xintheme.cn/game-special/584.html"><i
-                                                                class="iconfont icon-browse"></i>613</a></span><span
+                                                                class="iconfont icon-browse"></i>615</a></span><span
                                                         class="mobile-none"><a title="0 条评论"
                                                             href="http://relive.xintheme.cn/game-special/584.html"><i
                                                                 class="iconfont icon-interactive"></i>0</a></span>
-
-                                                    <div class="postlist-meta-collect collect-btn collect-no mobile-none"
-                                                        style="display: inline-block;margin-left: 3px;" pid="584"
-                                                        uid="116" title="点击收藏"> <i
-                                                            class="iconfont icon-collection"></i><span>2</span>&nbsp;
-                                                    </div>
+                                                    <a class="postlist-meta-collect collect-btn collect-no mobile-none"
+                                                        href="#login-modal" data-toggle="modal"
+                                                        data-target="#login-modal" title="你必须注册并登录才能收藏"><i
+                                                            class="iconfont icon-collection"></i><span>2</span></a>
                                                 </div>
                                             </div>
                                         </article>
@@ -1516,7 +1452,7 @@
                                                 <article class="post post--horizontal post--horizontal-xxs">
                                                     <div class="post__thumb min-height-70">
                                                         <a href="http://relive.xintheme.cn/appso/776.html">
-                                                            <img src="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/2018120311002423.jpeg?x-oss-process=image/resize,m_fill,w_180,h_180"
+                                                            <img src="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/2018121910501310.jpg?x-oss-process=image/resize,m_fill,w_180,h_180"
                                                                 alt="自1.3版本起，新增多种文章短代码" width="180" height="180">
                                                         </a>
                                                     </div>
@@ -1734,9 +1670,8 @@
                                 </li>
                                 <li class="menu-item"><a href="http://www.xintheme.com/theme/14046.html"><i
                                             class="iconfont icon-tishi5"></i> 购买主题</a></li>
-                                <li class="menu-item"><a
-                                        href="http://relive.xintheme.cn/author/116?tab=post&action=new"><i
-                                            class="iconfont icon-write"></i> 投稿</a></li>
+                                <li class="menu-item"><a href="#login-modal" data-toggle="modal"
+                                        data-target="#login-modal"><i class="iconfont icon-write"></i> 投稿</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1764,52 +1699,9 @@
                         </ul>
                     </div>
                     <div class="navigation-bar__section lwa lwa-template-modal">
-                        <div class="bk-lwa navigation-bar-btn">
-                            <table>
-                                <tr>
-                                    <td class="avatar lwa-avatar bk-avatar">
-                                        <a href="#"><img
-                                                src="https://q.qlogo.cn/qqapp/101533230/71F047926FD5688D1E9043A5B7A1A854/100"
-                                                class="avatar" width="27" height="27" /></a>
-                                        <div class="bk-username visible-xs visible-sm">
-                                            <a href="http://relive.xintheme.cn/author/116">麦迪文</a>
-                                        </div>
-                                        <div class="bk-canvas-logout visible-xs visible-sm">
-                                            <i class="iconfont icon-084tuichu"></i>
-                                            <a class="wp-logout"
-                                                href="http://relive.xintheme.cn/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Frelive.xintheme.cn&amp;_wpnonce=db8abda167">退出登录</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="bk-account-info hidden-xs hidden-sm">
-                                <div class="bk-lwa-profile">
-                                    <div class="bk-avatar">
-                                        <img src="https://q.qlogo.cn/qqapp/101533230/71F047926FD5688D1E9043A5B7A1A854/100"
-                                            class="avatar" width="110" height="110" /> </div>
-                                    <div class="bk-user-data clearfix">
-                                        <div class="bk-username">
-                                            <i class="iconfont icon-denglu"></i>
-                                            <a href="http://relive.xintheme.cn/author/116">我的主页</a>
-                                        </div>
-                                        <div class="bk-block">
-                                            <i class="iconfont icon-bianji"></i>
-                                            <a href="http://relive.xintheme.cn/author/116?tab=profile">个人资料</a>
-                                        </div>
-                                        <div class="bk-block">
-                                            <i class="iconfont icon-wenzhang" style="font-weight: 700;"></i>
-                                            <a href="http://relive.xintheme.cn/author/116?tab=post&action=new">我要投稿</a>
-                                        </div>
-
-                                        <div class="bk-block">
-                                            <i class="iconfont icon-084tuichu"></i>
-                                            <a class="wp-logout"
-                                                href="http://relive.xintheme.cn/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Frelive.xintheme.cn&amp;_wpnonce=db8abda167">退出登录</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> <button type="submit" class="navigation-bar-btn js-search-dropdown-toggle">
+                        <a href="#login-modal" class="navigation-bar__login-btn navigation-bar-btn" data-toggle="modal"
+                            data-target="#login-modal"><i class="iconfont icon-denglu"></i></a>
+                        <button type="submit" class="navigation-bar-btn js-search-dropdown-toggle">
                             <i class="iconfont icon-sousuo"></i>
                         </button>
                     </div>
@@ -1852,52 +1744,8 @@
             </div>
             <div class="mnmd-offcanvas__section visible-xs visible-sm">
                 <div class="text-center">
-                    <div class="bk-lwa navigation-bar-btn">
-                        <table>
-                            <tr>
-                                <td class="avatar lwa-avatar bk-avatar">
-                                    <a href="#"><img
-                                            src="https://q.qlogo.cn/qqapp/101533230/71F047926FD5688D1E9043A5B7A1A854/100"
-                                            class="avatar" width="27" height="27" /></a>
-                                    <div class="bk-username visible-xs visible-sm">
-                                        <a href="http://relive.xintheme.cn/author/116">麦迪文</a>
-                                    </div>
-                                    <div class="bk-canvas-logout visible-xs visible-sm">
-                                        <i class="iconfont icon-084tuichu"></i>
-                                        <a class="wp-logout"
-                                            href="http://relive.xintheme.cn/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Frelive.xintheme.cn&amp;_wpnonce=db8abda167">退出登录</a>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                        <div class="bk-account-info hidden-xs hidden-sm">
-                            <div class="bk-lwa-profile">
-                                <div class="bk-avatar">
-                                    <img src="https://q.qlogo.cn/qqapp/101533230/71F047926FD5688D1E9043A5B7A1A854/100"
-                                        class="avatar" width="110" height="110" /> </div>
-                                <div class="bk-user-data clearfix">
-                                    <div class="bk-username">
-                                        <i class="iconfont icon-denglu"></i>
-                                        <a href="http://relive.xintheme.cn/author/116">我的主页</a>
-                                    </div>
-                                    <div class="bk-block">
-                                        <i class="iconfont icon-bianji"></i>
-                                        <a href="http://relive.xintheme.cn/author/116?tab=profile">个人资料</a>
-                                    </div>
-                                    <div class="bk-block">
-                                        <i class="iconfont icon-wenzhang" style="font-weight: 700;"></i>
-                                        <a href="http://relive.xintheme.cn/author/116?tab=post&action=new">我要投稿</a>
-                                    </div>
-
-                                    <div class="bk-block">
-                                        <i class="iconfont icon-084tuichu"></i>
-                                        <a class="wp-logout"
-                                            href="http://relive.xintheme.cn/wp-login.php?action=logout&amp;redirect_to=http%3A%2F%2Frelive.xintheme.cn&amp;_wpnonce=db8abda167">退出登录</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="#login-modal" class="btn btn-default" data-toggle="modal" data-target="#login-modal"><i
+                            class="iconfont icon-denglu"></i> <span>登录/注册</span></a>
                 </div>
             </div>
             <div class="mnmd-offcanvas__section mnmd-offcanvas__section-navigation">
@@ -1970,8 +1818,8 @@
                                                     class="iconfont icon-time"></i>2019-01-12</time>
                                             <span><a title="0 条评论" href="http://relive.xintheme.cn/review/943.html"><i
                                                         class="iconfont icon-interactive"></i>0</a></span>
-                                            <span><a title="185 次浏览" href="http://relive.xintheme.cn/review/943.html"><i
-                                                        class="iconfont icon-browse"></i>185</a></span>
+                                            <span><a title="187 次浏览" href="http://relive.xintheme.cn/review/943.html"><i
+                                                        class="iconfont icon-browse"></i>187</a></span>
                                         </div>
                                     </div>
                                 </article>
@@ -1994,8 +1842,8 @@
                                                     class="iconfont icon-time"></i>2019-01-11</time>
                                             <span><a title="3 条评论" href="http://relive.xintheme.cn/appso/966.html"><i
                                                         class="iconfont icon-interactive"></i>3</a></span>
-                                            <span><a title="719 次浏览" href="http://relive.xintheme.cn/appso/966.html"><i
-                                                        class="iconfont icon-browse"></i>719</a></span>
+                                            <span><a title="729 次浏览" href="http://relive.xintheme.cn/appso/966.html"><i
+                                                        class="iconfont icon-browse"></i>729</a></span>
                                         </div>
                                     </div>
                                 </article>
@@ -2019,8 +1867,8 @@
                                                     class="iconfont icon-time"></i>2018-10-28</time>
                                             <span><a title="5 条评论" href="http://relive.xintheme.cn/life/742.html"><i
                                                         class="iconfont icon-interactive"></i>5</a></span>
-                                            <span><a title="1,439 次浏览" href="http://relive.xintheme.cn/life/742.html"><i
-                                                        class="iconfont icon-browse"></i>1,439</a></span>
+                                            <span><a title="1,445 次浏览" href="http://relive.xintheme.cn/life/742.html"><i
+                                                        class="iconfont icon-browse"></i>1,445</a></span>
                                         </div>
                                     </div>
                                 </article>
@@ -2031,7 +1879,7 @@
                                     <div class="post__thumb">
                                         <a href="http://relive.xintheme.cn/appso/776.html" alt="自1.3版本起，新增多种文章短代码">
                                             <img width="180" height="180"
-                                                src="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/2018121910500992.jpg?x-oss-process=image/resize,m_fill,w_180,h_180"
+                                                src="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/201812191050137.jpg?x-oss-process=image/resize,m_fill,w_180,h_180"
                                                 alt="自1.3版本起，新增多种文章短代码"></a>
                                     </div>
                                     <div class="post__text">
@@ -2043,9 +1891,9 @@
                                                     class="iconfont icon-time"></i>2018-10-20</time>
                                             <span><a title="2 条评论" href="http://relive.xintheme.cn/appso/776.html"><i
                                                         class="iconfont icon-interactive"></i>2</a></span>
-                                            <span><a title="1,470 次浏览"
+                                            <span><a title="1,475 次浏览"
                                                     href="http://relive.xintheme.cn/appso/776.html"><i
-                                                        class="iconfont icon-browse"></i>1,470</a></span>
+                                                        class="iconfont icon-browse"></i>1,475</a></span>
                                         </div>
                                     </div>
                                 </article>
@@ -2155,7 +2003,7 @@
                                         <input class="login-loader btn btn-block btn-primary lwa-wp-submit"
                                             type="submit" value="立即登录" name="submit">
                                         <input type="hidden" name="action" value="XinTheme_login">
-                                        <input type="hidden" id="security" name="security" value="941a36228b">
+                                        <input type="hidden" id="security" name="security" value="30e2c373ca">
                                         <input type="hidden" name="_wp_http_referer" value="http://relive.xintheme.cn/">
                                     </div>
                                 </div>
@@ -2165,13 +2013,13 @@
                             <div class="login-with-social">
                                 <div class="apsl-login-networks theme-1 clearfix">
                                     <div class="social-networks">
-                                        <a href="http://relive.xintheme.cn/?connect=qq&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn%2Fgame-special%2F584.html"
+                                        <a href="http://relive.xintheme.cn/?connect=qq&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn"
                                             class="login-with-qq" title="使用QQ登录">
                                             <div class="apsl-icon-block clearfix">
                                                 <i class="iconfont icon-QQ"></i>
                                             </div>
                                         </a>
-                                        <a href="http://relive.xintheme.cn/?connect=weibo&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn%2Fgame-special%2F584.html"
+                                        <a href="http://relive.xintheme.cn/?connect=weibo&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn"
                                             class="login-with-weibo" title="使用微博登录">
                                             <div class="apsl-icon-block clearfix">
                                                 <i class="iconfont icon-weibo"></i>
@@ -2221,7 +2069,7 @@
                                         value="立即注册" name="submit">
                                 </p>
 
-                                <input type="hidden" id="user_security" name="user_security" value="3d494aaed5"><input
+                                <input type="hidden" id="user_security" name="user_security" value="b66e7e0443"><input
                                     type="hidden" name="_wp_http_referer" value="/">
                             </form>
 
@@ -2229,13 +2077,13 @@
                             <div class="login-with-social">
                                 <div class="apsl-login-networks theme-1 clearfix">
                                     <div class="social-networks">
-                                        <a href="http://relive.xintheme.cn/?connect=qq&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn%2Fgame-special%2F584.html"
+                                        <a href="http://relive.xintheme.cn/?connect=qq&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn"
                                             class="login-with-qq" title="使用QQ登录">
                                             <div class="apsl-icon-block clearfix">
                                                 <i class="iconfont icon-QQ"></i>
                                             </div>
                                         </a>
-                                        <a href="http://relive.xintheme.cn/?connect=weibo&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn%2Fgame-special%2F584.html"
+                                        <a href="http://relive.xintheme.cn/?connect=weibo&action=login&redirect=http%3A%2F%2Frelive.xintheme.cn"
                                             class="login-with-weibo" title="使用微博登录">
                                             <div class="apsl-icon-block clearfix">
                                                 <i class="iconfont icon-weibo"></i>

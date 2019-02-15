@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pageConfig = require('./page.config');
 
 let webpackConfig = {
@@ -14,6 +15,9 @@ let webpackConfig = {
     path: path.join(__dirname, "./dist/"),
     filename: 'static/js/[name].[hash:7].js',
     publicPath: '/'
+  },
+  externals : {
+    'jquery' : 'window.jQuery'
   },
   module: {
     rules: [
@@ -90,7 +94,11 @@ let webpackConfig = {
         verbose: true,
         dry: false
       }
-    )
+    ),
+    new CopyWebpackPlugin([{
+      from: __dirname + '/src/libs',
+      to: "libs/",
+    }])
   ],
   // 起本地服务
   devServer: {
