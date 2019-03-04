@@ -7,7 +7,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const pageConfig = require('./page.config');
 
 let webpackConfig = {
-  mode: 'none',
+  mode: 'development',
   // 配置入口
   entry: {},
   // 配置出口
@@ -106,6 +106,7 @@ let webpackConfig = {
     historyApiFallback: true,
     inline: true,
     hot: true,
+    open: true,
     host: '127.0.0.1'
   }
 }
@@ -116,6 +117,7 @@ if (pageConfig && Array.isArray(pageConfig)) {
     webpackConfig.plugins.push(new HtmlWebpackPlugin({
       filename: path.join(__dirname, `/dist/${page.name}.html`),
       template: path.join(__dirname, `/src/pages/${page.html}`),
+      text: "text",
       inject: true,
       chunks: [page.name],
       inlineSource: '.(js|css)$',

@@ -4,6 +4,7 @@
   "description": "Theme of jscms",
   "main": "webpack.config.js",
   "scripts": {
+    "build-tpl": "node build-tpl.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.prod.js ",
     "dev": "webpack-dev-server --hot --inline --watch --host 0.0.0.0 --config webpack.config.dev.js"
@@ -28,6 +29,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
+    "ejs": "^2.6.1",
     "eslint": "^4.19.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-friendly-formatter": "^4.0.1",
@@ -44,6 +46,7 @@
     "html-withimg-loader": "^0.1.16",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "lodash": "^4.17.11",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "url-loader": "^1.0.1",
