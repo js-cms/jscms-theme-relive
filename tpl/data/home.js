@@ -1,7 +1,7 @@
 module.exports = {
-    webConfig: {
-        websiteConfig: {
-            title: "3this is my home"
-        }
+  webConfig: {
+    websiteConfig: {
+      title: "This is my home."
     }
+  }
 }

@@ -1,2 +1,3 @@
-# jscms-theme-xblog
-Theme of jscms
+# Relive主题
+
+Jscms主题之一。
