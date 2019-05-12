@@ -1,7 +1,7 @@
 let common = require('./data/common.js');
-const home = require('./data/home.js');
+const index = require('./data/index.js');
 const _ = require('lodash');
 
 module.exports = {
-  home: _.merge(common, home)
+  index: _.merge(common, index)
 }

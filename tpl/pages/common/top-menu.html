@@ -1,0 +1,115 @@
+<header class="site-header site-header--skin-2">
+  <div id="mnmd-mobile-header" class="mobile-header visible-xs visible-sm mobile-header--inverse">
+    <div class="mobile-header__inner mobile-header__inner--flex">
+      <div class="header-branding header-branding--mobile mobile-header__section text-left">
+        <div class="header-logo header-logo--mobile flexbox__item text-left">
+          <a href="/">
+            <img src="<%-WEB_CONFIG.site.logo%>" alt="<%-WEB_CONFIG.site.subtitle%>">
+          </a>
+        </div>
+      </div>
+      <div class="mobile-header__section text-right">
+        <button type="submit" class="mobile-header-btn js-search-dropdown-toggle">
+          <span class="hidden-xs">搜索</span>
+          <i class="iconfont icon-sousuo mdicon--last hidden-xs"></i>
+          <i class="iconfont icon-sousuo visible-xs-inline-block"></i>
+        </button>
+        <a href="#mnmd-offcanvas-mobile" class="offcanvas-menu-toggle mobile-header-btn js-mnmd-offcanvas-toggle">
+          <span class="hidden-xs">菜单</span>
+          <i class="iconfont icon-wangzhandaohang mdicon--last hidden-xs"></i>
+          <i class="iconfont icon-wangzhandaohang visible-xs-inline-block"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav
+    class="navigation-bar navigation-bar--fullwidth hidden-xs hidden-sm js-sticky-header-holder navigation-bar--inverse">
+    <div class="navigation-bar__inner">
+      <div class="navigation-bar__section">
+        <div class="site-logo header-logo">
+          <a href="/">
+            <img src="<%-WEB_CONFIG.site.logo%>" alt="<%-WEB_CONFIG.site.subtitle%>">
+          </a>
+        </div>
+      </div>
+      <div class="navigation-wrapper navigation-bar__section js-priority-nav">
+        <div id="main-menu" class="menu-main-menu-container">
+          <ul id="menu-main-menu" class="navigation navigation--main navigation--inline">
+            <li class="menu-item current-menu-item"><a href="/index.html">首页</a>
+            </li>
+            <% WEB_CONFIG.menus.forEach(function(menu, index) { %>
+            <% if (menu.isValid) { %>
+            <li class="menu-item <% if (menu.hasChild) { %>menu-item-has-children<% } %>">
+              <a href="<%-menu.link%>"><%-menu.name%></a>
+              <% if (menu.hasChild) { %>
+              <ul class="sub-menu">
+                <% menu.children.forEach(function(subMenu, index) { %>
+                <% if (subMenu.isValid) { %>
+                <li class="menu-item"><a href="<%-subMenu.link%>"><%-subMenu.name%></a></li>
+                <% } %>
+                <% }) %>
+              </ul>
+              <% } %>
+            </li>
+            <% } %>
+            <% }) %>
+            <% if (WEB_CONFIG.boolWebReg) { %>
+            <li class="menu-item">
+              <a href="#login-modal" data-toggle="modal" data-target="#login-modal">
+                <i class="iconfont icon-write"></i>投稿
+              </a>
+            </li>
+            <% } %>
+          </ul>
+        </div>
+      </div>
+      <!-- <div class="navigation-bar__section">
+        此部分导航暂不开放
+        <ul class="social-list list-horizontal social-list--inverse">
+          <li>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=670088886&site=qq&menu=yes" rel="nofollow" target="_blank"><i
+                class="iconfont icon-QQ"></i></a>
+          </li>
+          <li>
+            <a href="https://weibo.com/xintheme" rel="nofollow" target="_blank"><i class="iconfont icon-weibo"></i></a>
+          </li>
+          <li>
+            <a id="header_weixin" class="header_weixin" href="javascript:void(0);"><i
+                class="iconfont icon-weixin"></i></a>
+          </li>
+          <li>
+            <a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=670088886@qq.com" rel="nofollow"
+              target="_blank"><i class="iconfont icon-youxiang"></i></a>
+          </li>
+        </ul>
+      </div> -->
+
+      <div class="navigation-bar__section lwa lwa-template-modal">
+        <% if (WEB_CONFIG.boolWebReg) { %>
+        <a href="#login-modal" class="navigation-bar__login-btn navigation-bar-btn" data-toggle="modal"
+          data-target="#login-modal"><i class="iconfont icon-denglu"></i></a>
+        <% } %>
+        <button type="submit" class="navigation-bar-btn js-search-dropdown-toggle">
+          <i class="iconfont icon-sousuo"></i>
+        </button>
+      </div>
+
+    </div>
+    <div id="header-search-dropdown" class="header-search-dropdown ajax-search is-in-navbar js-ajax-search">
+      <div class="container container--narrow">
+        <form class="search-form search-form--horizontal" method="get" action="http://relive.xintheme.cn/">
+          <div class="search-form__input-wrap">
+            <input type="text" name="s" class="search-form__input" placeholder="输入关键词进行搜索..." value="" />
+          </div>
+          <div class="search-form__submit-wrap">
+            <button type="submit" class="search-form__submit btn btn-primary">搜索一下</button>
+          </div>
+        </form>
+        <div class="search-results">
+          <div class="typing-loader"></div>
+          <div class="search-results__inner"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -3,15 +3,15 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0">
     <link rel="shortcut icon"
         href="http://xintheme-relive.oss-cn-beijing.aliyuncs.com/wp-content/uploads/2018/10/favicon.png" />
-    <title><%- webConfig.websiteConfig.title %> - <%- webConfig.websiteConfig.subtitle %></title>
-    <link rel='stylesheet' id='wp-block-library-css' href='./libs/css/block-library/style.min.css' type='text/css'
+    <title><%- WEB_CONFIG.site.title %> </title>
+    <link rel='stylesheet' id='wp-block-library-css' href='<%-CONSTANT.THEME_STATIC%>/libs/css/block-library/style.min.css' type='text/css'
         media='all' />
-    <link rel='stylesheet' id='iconfont-css' href='./libs/css/iconfont/iconfont.css' type='text/css' media='all' />
-    <link rel='stylesheet' id='dashicons-css' href='./libs/css/dashicons/dashicons.min.css' type='text/css'
+    <link rel='stylesheet' id='iconfont-css' href='<%-CONSTANT.THEME_STATIC%>/libs/css/iconfont/iconfont.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='dashicons-css' href='<%-CONSTANT.THEME_STATIC%>/libs/css/dashicons/dashicons.min.css' type='text/css'
         media='all' />
-    <link rel='stylesheet' id='thickbox-css' href='/libs/js/thickbox/thickbox.css' type='text/css' media='all' />
-    <script type='text/javascript' src='./libs/js/jquery.min.js'></script>
-    <script type='text/javascript' src='./libs/js/jquery-migrate.min.js'></script>
+    <link rel='stylesheet' id='thickbox-css' href='<%-CONSTANT.THEME_STATIC%>/libs/js/thickbox/thickbox.css' type='text/css' media='all' />
+    <script type='text/javascript' src='<%-CONSTANT.THEME_STATIC%>/libs/js/jquery.min.js'></script>
+    <script type='text/javascript' src='<%-CONSTANT.THEME_STATIC%>/libs/js/jquery-migrate.min.js'></script>
     <style>
         .mobile-header--inverse .mobile-header-btn,
         .mobile-header--inverse .mobile-header-btn:hover,
@@ -56,6 +56,6 @@
             background: #fc3c2d
         }
     </style>
-    <meta name="keywords" content="<%- webConfig.websiteConfig.keywords %>" />
-    <meta name="description" content="<%- webConfig.websiteConfig.description %>" />
+    <meta name="keywords" content="<%- WEB_CONFIG.site.keywords %>" />
+    <meta name="description" content="<%- WEB_CONFIG.site.description %>" />
 </head>
